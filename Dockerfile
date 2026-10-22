@@ -6,7 +6,7 @@ COPY src ./src
 COPY public-html ./public-html
 RUN touch src/main.rs && cargo build --release --locked
 
-FROM gcr.io/distroless/static-debian12:nonroot
+FROM gcr.io/distroless/static-debian13:nonroot
 COPY --from=build /src/target/release/wednesday /wednesday
 EXPOSE 8080
 ENTRYPOINT ["/wednesday"]
