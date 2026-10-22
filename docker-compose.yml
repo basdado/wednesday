@@ -1,12 +1,12 @@
-version: '3'
-
 services:
-  php:
-    # build: .
-    image: php:apache
+  wednesday:
+    build: .
     ports:
-      - 8080:80
-    environment: 
+      - 8080:8080
+    environment:
       - TZ=Europe/Amsterdam
-    volumes:
-     - ./public-html:/var/www/html
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

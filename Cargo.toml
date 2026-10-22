@@ -1,0 +1,10 @@
+[package]
+name = "wednesday"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.8.9"
+jiff = { version = "0.2.38", default-features = false, features = ["std", "tz-system", "tzdb-bundle-always"] }
+tokio = { version = "1.54.1", features = ["rt", "net", "macros", "signal"] }
+tower-http = { version = "0.7.1", features = ["timeout", "set-header"] }
